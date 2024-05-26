@@ -9,11 +9,11 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Sidebar Example with Subcategories"
 
 # Define a function to create a collapsible item
-def create_collapsible_item(item_id, title, links, style=None):
+def create_collapsible_item(panel_id, title, links):
     return html.Div([
         dbc.Button(
             title,
-            id=f"button-{item_id}",
+            id=f"button-{panel_id}",
             className="mb-2",
             color="link",
             n_clicks=0,
@@ -24,10 +24,10 @@ def create_collapsible_item(item_id, title, links, style=None):
                 vertical=True,
                 pills=True,
             ),
-            id=f"collapse-{item_id}",
+            id=f"collapse-{panel_id}",
             is_open=False,
         )
-    ], style=style)
+    ], style={'margin-bottom': '10px'})
 
 # Define the layout of the app
 app.layout = html.Div([
@@ -35,7 +35,7 @@ app.layout = html.Div([
     dbc.Row([
         dbc.Col(
             [
-                html.H2("Sidebar", className="sidebar-title"),
+                html.H2("Sidebar", className="sidebar-title", style={'padding-top': '20px'}),
                 create_collapsible_item(
                     'panel1', 'Panel 1',
                     [
@@ -55,15 +55,15 @@ app.layout = html.Div([
                     [
                         {'name': 'Subcategory 3.1', 'href': '/panel3/sub1'},
                         {'name': 'Subcategory 3.2', 'href': '/panel3/sub2'},
-                    ],
-                    style={'margin-bottom': '200px'} # Add top margin
+                    ]
                 ),
             ],
             width=3,
             style={
                 'background-color': '#f8f9fa',
                 'padding': '20px',
-                'height': '100vh'
+                'height': '100vh',
+                'overflow-y': 'auto'
             }
         ),
         dbc.Col(
@@ -73,17 +73,39 @@ app.layout = html.Div([
     ])
 ])
 
-# List of panel ids
-panel_ids = ['panel1', 'panel2', 'panel3']
+# Callbacks to toggle the collapsible items
+@app.callback(
+    Output("collapse-panel1", "is_open"),
+    [Input("button-panel1", "n_clicks")],
+    [State("collapse-panel1", "is_open")],
+    prevent_initial_call=True,
+)
+def toggle_collapse_panel1(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
-# Dynamic callback to toggle the collapsible items
-for panel_id in panel_ids:
-    app.callback(
-        Output(f"collapse-{panel_id}", "is_open"),
-        [Input(f"button-{panel_id}", "n_clicks")],
-        [State(f"collapse-{panel_id}", "is_open")],
-        prevent_initial_call=True
-    )(lambda n, is_open: not is_open if n else is_open)
+@app.callback(
+    Output("collapse-panel2", "is_open"),
+    [Input("button-panel2", "n_clicks")],
+    [State("collapse-panel2", "is_open")],
+    prevent_initial_call=True,
+)
+def toggle_collapse_panel2(n, is_open):
+    if n:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("collapse-panel3", "is_open"),
+    [Input("button-panel3", "n_clicks")],
+    [State("collapse-panel3", "is_open")],
+    prevent_initial_call=True,
+)
+def toggle_collapse_panel3(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 # Define the callback to update the page content
 @app.callback(
