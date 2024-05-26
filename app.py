@@ -102,7 +102,7 @@ def display_page(pathname):
         ])
     elif pathname == '/panel2/sub1':
         return html.Div([
-            html.H3('Panel 2 - Sutegory 1'),
+            html.H3('Panel 2 - Subcategory 1'),
             html.P('Content for Panel 2 Subcategory 1.')
         ])
     elif pathname == '/panel2/sub2':
