@@ -9,7 +9,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Sidebar Example with Subcategories"
 
 # Define a function to create a collapsible item
-def create_collapsible_item(item_id, title, links):
+def create_collapsible_item(item_id, title, links, style=None):
     return html.Div([
         dbc.Button(
             title,
@@ -27,7 +27,7 @@ def create_collapsible_item(item_id, title, links):
             id=f"collapse-{item_id}",
             is_open=False,
         )
-    ])
+    ], style=style)
 
 # Define the layout of the app
 app.layout = html.Div([
@@ -55,7 +55,8 @@ app.layout = html.Div([
                     [
                         {'name': 'Subcategory 3.1', 'href': '/panel3/sub1'},
                         {'name': 'Subcategory 3.2', 'href': '/panel3/sub2'},
-                    ]
+                    ],
+                    style={'margin-bottom': '200px'} # Add top margin
                 ),
             ],
             width=3,
