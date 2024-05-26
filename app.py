@@ -39,7 +39,7 @@ app.layout = html.Div([
                 create_collapsible_item(
                     'panel1', 'Panel 1',
                     [
-                        {'name': 'Subcategory 1.1', 'href': '/panel1/sub1'},
+                        {'name': 'Subcatego444 1.1', 'href': '/panel1/sub1'},
                         {'name': 'Subcategory 1.2', 'href': '/panel1/sub2'},
                     ]
                 ),
