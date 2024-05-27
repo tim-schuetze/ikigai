@@ -1,3 +1,4 @@
+# Test text
 import dash
 from dash import html
 from dash import dcc
@@ -6,12 +7,20 @@ from dash.dependencies import Input, Output
 
 # Initialize the Dash app with Bootstrap theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.title = "Sidebar Example with Subcategories"
+app.title = "Your IKIGAI in Realtime"
+
 def create_nav_link(name, href, style):
     return dbc.NavLink(name, href=href, style=style)
 
-def create_card(name):
-    return dbc.Card([dbc.CardBody(name, className="card-text")], className="mb-3", style={'border-radius': '10px', 'background-color': '#ADD8E6'})
+def create_card(name, href):
+    return dbc.Card([
+        dbc.CardBody([
+            dbc.NavLink(name, href=href, style={'color': 'black', 'text-decoration': 'none', 'font-size': '16px'}),
+        ], className="d-flex justify-content-center align-items-center")  # Added align-items-center
+    ], className="mb-3", style={'border-radius': '10px', 'background-color': '#ADD8E6', 'padding': '10px', 'height': '100px'})  # Adjusted padding and height
+
+def create_button():
+    return dbc.Button("Start questionnaire", color="warning", style={'color': 'white', 'font-weight': 'bold'})
 
 # Define the layout of the app
 app.layout = html.Div([
@@ -56,34 +65,68 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/overview':
         return html.Div([
-            html.H3('1'),
+            html.H3('Overview'),
             html.P('Content for Overview page.')
         ])
     elif pathname == '/profile':
         return html.Div([
-            html.H3('2'),
-            html.Div([
-                create_card("Venture-to-Person-Fit"),
-                create_card("Team-Core-Values-Fit"),
-                create_card("Team-Competence-Fit"),
-                create_card("Team-Core-Values-Business-Idea-Fit"),
-                create_card("Team-Core-Competence-Business-Idea-Fit"),
-            ])
+            html.H3('Your Profile'),
+            dbc.Row([
+                dbc.Col(create_card("Venture-to-Person-Fit", "/profile/venture-to-person-fit"), width=5),
+                dbc.Col(create_card("Team Core Values-Fit", "/profile/team-core-values-fit"), width=5),
+            ]),
+            dbc.Row([
+                dbc.Col(create_card("Team Competence-Fit", "/profile/team-competence-fit"), width=5),
+                dbc.Col(create_card("Team Core Values-Business Idea Fit", "/profile/team-core-values-business-idea-fit"), width=5),
+            ]),
+            dbc.Row([
+                dbc.Col(create_card("Team Core Competence-Business Idea Fit", "/profile/team-core-competence-business-idea-fit"), width=5),
+            ]),
         ])
-    elif '/profile' in pathname:
+    elif pathname == '/profile/venture-to-person-fit':
         return html.Div([
-            html.H3('3'),  # Display the headline
-            html.P('Content for Profile page.')
+            html.H3('Venture-to-Person-Fit'),  # Display the exact headline
+            html.Div([
+                create_button()
+            ], className="d-flex justify-content-center mt-3")
+        ])
+    elif pathname == '/profile/team-core-values-fit':
+        return html.Div([
+            html.H3('Team Core Values-Fit'),  # Display the exact headline
+            html.Div([
+                create_button()
+            ], className="d-flex justify-content-center mt-3")
+        ])
+    elif pathname == '/profile/team-competence-fit':
+        return html.Div([
+            html.H3('Team Competence-Fit'),  # Display the exact headline
+            html.Div([
+                create_button()
+            ], className="d-flex justify-content-center mt-3")
+        ])
+    elif pathname == '/profile/team-core-values-business-idea-fit':
+        return html.Div([
+            html.H3('Team Core Values-Business Idea Fit'),  # Display the exact headline
+            html.Div([
+                create_button()
+            ], className="d-flex justify-content-center mt-3")
+        ])
+    elif pathname == '/profile/team-core-competence-business-idea-fit':
+        return html.Div([
+            html.H3('Team Core Competence-Business Idea Fit'),  # Display the exact headline
+            html.Div([
+                create_button()
+            ], className="d-flex justify-content-center mt-3")
         ])
     elif pathname == '/reports':
         return html.Div([
-            html.H3('4'),
+            html.H3('Reports'),
             html.P('Content for Reports page.')
         ])
     else:
         return html.Div([
-            html.H3('5'),
-            html.P('Please select a panel from the sidebar.')
+            html.H3('Please select a panel from the sidebar.'),
+            html.P('Content for the default page.')
         ])
 
 # Run the app
