@@ -76,7 +76,7 @@ def display_page(pathname):
                 dbc.Col(create_card("Team Core Values-Fit", "/profile/team-core-values-fit"), width=5),
             ]),
             dbc.Row([
-                dbc.Col(create_card("Team Competence-Fit", "/profile/team-competence-fit"), width=5),
+                dbc.Col(create_card("Team Competehttps://github.com/tim-schuetze/ikigai/tree/main/Ikigaince-Fit", "/profile/team-competence-fit"), width=5),
                 dbc.Col(create_card("Team Core Values-Business Idea Fit", "/profile/team-core-values-business-idea-fit"), width=5),
             ]),
             dbc.Row([
