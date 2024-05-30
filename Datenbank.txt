@@ -1,0 +1,16 @@
+Datenbank:
+
+Postresql
+IDE - Datagrip
+
+Backend:
+Python
+Framework - Flask
+IDE - Pycharm
+
+
+Frontend:
+
+Java Script
+Framework - React.js
+IDE - Webstorm
