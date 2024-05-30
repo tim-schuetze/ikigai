@@ -4,9 +4,9 @@ Postresql
 IDE - Datagrip
 
 Backend:
-Python
-Framework - Flask
-IDE - Pycharm
+Python / Java Script 
+Framework - Flask / Express
+IDE - Pycharm / Webstorm
 
 
 Frontend:
