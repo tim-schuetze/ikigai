@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI-Kunst</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div class="colorChangeAlign">
+    <div class="colorChange">
+      <div class="color" id="colorDefault"></div>
+      <div class="color" id="colorRed"></div>
+      <div class="color" id="colorBlue"></div>
+      <div class="color" id="colorGreen"></div>
+    </div>
+  </div>
+  <p class="headline">Ikigai</p>
+  <div id="ikigaitext">
+        <h3>Bedeutung von Ikigai</h3>
+        <p>Ikigai is a Japanese concept that translates to "reason for being" or "purpose in life." It describes the things that make life worthwhile and helps find a balance between personal passions, skills, what the world needs, and what one can be paid for. In a business context, Ikigai can serve as a guide to developing business ideas that are not only economically successful but also personally fulfilling and socially beneficial.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="sectionHeadlineText">Bitte füllen Sie alle Teile des Fragebogens aus:</p>
+  <div class="summary">
+    <a href="#sectionHeadlineText" class="section">Venture-to-Person-Fit</a>
+    <a href="#sectionHeadlineText2" class="section">Team-Core-Competence-Business-Idea-Fit</a>
+    <a href="#sectionHeadlineText3" class="section">Team-Core-Values-Business-Idea-Fit</a>
+    <a href="#sectionHeadlineText4" class="section">Team-Competence-Fit</a>
+    <a href="#sectionHeadlineText5" class="section">Team-Core-Values-Fit</a>
+    <a href="#sectionHeadlineText6" class="section">Übersicht der Ergebnisse</a>
+  </div>
+  <p class="sectionHeadlineText" id="sectionHeadlineText">Venture-to-Person-Fit</p>
+  <div class="informationCard">
+    <p class="informationCardHeadline" id="informationCardHeadline">Test</p>
+    <p class="informationCardInformation" id="informationCardInformation"></p>
+    <div class="switchCardButtonsAlign">
+      <button class="previousCardButton" id="previousCardButton">Letzte Karte</button>
+      <button class="nextCardButton" id="nextCardButton">Nächste Karte</button>
+    </div>
+    <div class="switchCardNumberButtonsAlign">
+      <button class="switchCardNumberButton" id="switchCardNumberButton1">1</button>
+      <button class="switchCardNumberButton" id="switchCardNumberButton2">2</button>
+      <button class="switchCardNumberButton" id="switchCardNumberButton3">3</button>
+      <button class="switchCardNumberButton" id="switchCardNumberButton4">4</button>
+    </div>
+  </div>
+  <p class="sectionHeadlineText2" id="sectionHeadlineText2" style="margin-top: 0">Beispielbilder</p>
+  <div class="examplePicturesCard" id="examplePicturesCard">
+    <p class="examplePicturesCardHeadline">
+      Die folgenden Bilder stammen von der KI Midjourney:
+    </p>
+    <div class="examplePicturesStructure" id="examplePicturesStructure">
+      <img src="src/mid-1.png" id="pic1" class="pictures">
+      <img src="src/mid-2.png" id="pic2" class="pictures">
+      <img src="src/mid-3.png" id="pic3" class="pictures">
+      <img src="src/mid-4.png" id="pic4" class="pictures">
+      <img src="src/mid-5.jpeg" id="pic5" class="pictures">
+      <img src="src/mid-6.png" id="pic6" class="pictures">
+      <img src="src/mid-7.webp" id="pic7" hidden class="pictures">
+      <img src="src/mid-8.webp" id="pic8" hidden class="pictures">
+      <img src="src/mid-9.jpeg" id="pic9" hidden class="pictures">
+      <img src="src/mid-10.png" id="pic10" hidden class="pictures">
+      <img src="src/mid-11.png" id="pic11" hidden class="pictures">
+      <img src="src/mid-12.jpeg" id="pic12" hidden class="pictures">
+      <img src="src/mid-13.png" id="pic13" hidden class="pictures">
+      <img src="src/mid-14.png" id="pic14" hidden class="pictures">
+      <img src="src/mid-15.jpeg" id="pic15" hidden class="pictures">
+      <img src="src/mid-16.jpeg" id="pic16" hidden class="pictures">
+    </div>
+  </div>
+  <p class="showMore" id="showMore" onclick="showMoreImages()">Mehr anzeigen</p>
+  <p class="sectionHeadlineText2" id="sectionHeadlineText3">KI-Webseiten</p>
+  <div class="exampleWebsitesContainer">
+    <p class="exampleWebsitesHeadline">Da es mittlerweile bereits sehr viele Künstliche Intelligenzen gibt, ist es schwer zu sagen, welche die beste ist.</p>
+    <p class="exampleWebsitesHeadlineWeight">Deshalb sind hier die zwei bekannstesten Webseiten aufgelistet:</p>
+    <div class="chatgptInfoContainer">
+        <div class="aiSectionGrid">
+          <div class="aiImagesGrid">
+            <img src="src/chatgpt-logo.png" class="chatgptLogo" id="chatgptLogo">
+            <img src="src/midjourney-logo.png" class="midjourneyLogo" id="midjourneyLogo">
+          </div>
+          <div class="aiTextGrid">
+            <p class="chatgptInfoInnerContainerHeadline" id="aiInformationTextHeadline">ChatGPT</p>
+            <p class="aiInformationText" id="aiInformationText">
+              ChatGPT ist ein fortschrittliches künstliches neuronales Netzwerk, das auf der GPT-3.5-Architektur von OpenAI basiert. Es wurde entwickelt, um menschenähnliche Konversationen zu führen und komplexe sprachliche Aufgaben zu bewältigen. GPT steht für "Generative Pre-trained Transformer", was bedeutet, dass das Modell auf einer großen Menge an Textdaten vortrainiert wurde, um ein tiefes Verständnis für natürliche Sprache zu entwickeln.
+              
+              ChatGPT kann in verschiedenen Anwendungsbereichen eingesetzt werden, darunter Kundensupport, Textgenerierung, Informationssuche, Programmierung, Sprachübersetzung und vieles mehr. Es kann Fragen beantworten, Probleme lösen, Ratschläge geben und sogar Geschichten erzählen, alles auf eine Art und Weise, die einer menschlichen Unterhaltung ähnelt.
+              
+              Das Modell lernt aus seiner Interaktion mit den Benutzern und kann kontinuierlich verbessert werden. Es ist darauf ausgelegt, sich an den individuellen Schreibstil und die Bedürfnisse der Benutzer anzupassen. Dabei ist es jedoch wichtig zu beachten, dass ChatGPT trotz seiner Leistungsfähigkeit auch Einschränkungen hat und gelegentlich falsche oder unangemessene Antworten geben kann.
+              
+              OpenAI setzt sich aktiv dafür ein, die Sicherheit und Zuverlässigkeit von ChatGPT zu verbessern, um potenzielle Missbrauchsmöglichkeiten zu reduzieren und die Verwendung für positive Zwecke zu fördern. Benutzer werden ermutigt, verantwortungsbewusst mit dem Modell umzugehen und seine Ergebnisse kritisch zu bewerten, um eine bestmögliche Nutzung zu gewährleisten.
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <p class="sectionHeadlineText2" id="sectionHeadlineText4">Informationsvideo</p>
+  <video src="src/KI-Kunst.mp4" class="video" controls></video>
+  <p class="sectionHeadlineText2" id="sectionHeadlineText5">Quiz</p>
+  <div class="quizCardContainer">
+    <p class="quizCardHeadline">In dem folgenden Quiz werden nur Informationen abgefragt, die den Inhalt der Website widerspiegeln:</p>
+    <a href="Quiz/quiz.html" target="_blank"><button class="startQuizButton" id="startQuizButton">Quiz starten</button></a>
+  </div>
+</body>
+</html>

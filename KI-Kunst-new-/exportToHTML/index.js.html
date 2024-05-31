@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>index.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.js</font>
+</center></td></tr></table>
+<pre><span class="s0">let </span><span class="s1">currentCardIndex </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+<span class="s0">let </span><span class="s1">informationCards </span><span class="s2">= [</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;Was ist KI-Kunst eigentlich?&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">&quot;Im Gegensatz zu einem normalen Gemälde, bei dem ein Künstler ein Bild mit Mühe und Arbeit selber malt, zeigt KI-Kunst, dass es auch anders geht: Heutzutage ist es möglich mit Hilfe von künstlicher Intelligenz mit nur ein wenig Bildbeschreibung innerhalb von weniger Sekunden ein Kunstwerk zu erschaffen.&quot;</span>
+  <span class="s2">},</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;Wie wird KI-Kunst erschaffen?&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">&quot;Derzeit existieren spezielle Programme, die es ermöglichen, mithilfe von KI Kunstwerke zu erschaffen. Die bekanntesten Tools zur Erstellung sind Stable Diffusion und Midjouney. Nach Eingabe der Beschreibung generiert das Programm eine Vielzahl von möglichen Bildern.&quot;</span>
+  <span class="s2">},</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;Wie kann KI in kreativen Schaffungsprozessen helfen?&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">&quot;KI kann Künstlern helfen Inspiration zu finden oder bspw. bei Skizzen Vorarbeit zu leisten. Bei der Musik Produktion wird KI zur Automatischen Erstellung von Stimm-Samples genutzt. Es dient also als erweitertes Gedächtnis, das mithilfe von Mustererkennung die besten Ergebnisse aus den Datengrundlagen generiert und somit als erweiterter Arm für die Künstler fungiert.&quot;</span>
+  <span class="s2">},</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;Wer ist der Urheber bei KI generierter Kunst?&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">&quot;Wer auf jeden Fall nicht der Urheber der Kunst ist, ist die KI an sich, denn diese ist auf ihre Daten beschränkt und kann von sich aus nicht kreativ agieren. Rechtlich betrachtet ist der Programmierer also der Schaffer des Schaffenden der Besitzer dieses Geistigen gutes und nicht derjenige der, der KI die Anregung zu diesem gibt.&quot;</span>
+  <span class="s2">}</span>
+<span class="s2">];</span>
+
+<span class="s0">let </span><span class="s1">currentAiText </span><span class="s2">= [</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;ChatGPT&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">`ChatGPT ist ein fortschrittliches künstliches neuronales Netzwerk, das auf der GPT-3.5-Architektur von OpenAI basiert. Es wurde entwickelt, um menschenähnliche Konversationen zu führen und komplexe sprachliche Aufgaben zu bewältigen. GPT steht für &quot;Generative Pre-trained Transformer&quot;, was bedeutet, dass das Modell auf einer großen Menge an Textdaten vortrainiert wurde, um ein tiefes Verständnis für natürliche Sprache zu entwickeln. ChatGPT kann in verschiedenen Anwendungsbereichen eingesetzt werden, darunter Kundensupport, Textgenerierung, Informationssuche, Programmierung, Sprachübersetzung und vieles mehr. Es kann Fragen beantworten, Probleme lösen, Ratschläge geben und sogar Geschichten erzählen, alles auf eine Art und Weise, die einer menschlichen Unterhaltung ähnelt. Das Modell lernt aus seiner Interaktion mit den Benutzern und kann kontinuierlich verbessert werden. Es ist darauf ausgelegt, sich an den individuellen Schreibstil und die Bedürfnisse der Benutzer anzupassen. Dabei ist es jedoch wichtig zu beachten, dass ChatGPT trotz seiner Leistungsfähigkeit auch Einschränkungen hat und gelegentlich falsche oder unangemessene Antworten geben kann. OpenAI setzt sich aktiv dafür ein, die Sicherheit und Zuverlässigkeit von ChatGPT zu verbessern, um potenzielle Missbrauchsmöglichkeiten zu reduzieren und die Verwendung für positive Zwecke zu fördern. Benutzer werden ermutigt, verantwortungsbewusst mit dem Modell umzugehen und seine Ergebnisse kritisch zu bewerten, um eine bestmögliche Nutzung zu gewährleisten.`</span>
+  <span class="s2">},</span>
+  <span class="s2">{</span>
+    <span class="s1">headline</span><span class="s2">: </span><span class="s4">&quot;Midjourney&quot;</span><span class="s2">,</span>
+    <span class="s1">information</span><span class="s2">: </span><span class="s4">`Midjourney ist ein innovatives Unternehmen, das im Jahr 2015 gegründet wurde und seinen Sitz in einem aufstrebenden Technologiezentrum hat. Das Unternehmen hat sich darauf spezialisiert, kreative und maßgeschneiderte Lösungen im Bereich der digitalen Transformation anzubieten. 
+ 
+    Mit einem hochqualifizierten Team aus Experten in den Bereichen Künstliche Intelligenz, maschinelles Lernen, Data Science und Softwareentwicklung hat Midjourney eine breite Palette von Dienstleistungen entwickelt, die es Unternehmen ermöglichen, ihre Geschäftsprozesse zu optimieren und ihre Wettbewerbsfähigkeit zu steigern. 
+     
+    Das Leistungsspektrum von Midjourney umfasst unter anderem die Entwicklung intelligenter Chatbots und virtueller Assistenten, die Kundenkommunikation verbessern und den Kundensupport optimieren. Zudem bietet das Unternehmen datengetriebene Lösungen für die Geschäftsanalyse und -prognose, um fundierte Entscheidungen zu treffen und wertvolle Einblicke in das Unternehmen zu gewinnen. 
+     
+    Midjourney hat sich auch einen Namen in der Entwicklung von maßgeschneiderten Softwarelösungen gemacht, die speziell auf die individuellen Anforderungen und Bedürfnisse der Kunden zugeschnitten sind. Dabei setzen sie modernste Technologien ein, um innovative und benutzerfreundliche Anwendungen zu schaffen. 
+     
+    Ein weiterer Schwerpunkt von Midjourney liegt auf der Umsetzung von Projekten im Bereich der künstlichen Intelligenz und des maschinellen Lernens. Sie arbeiten an Forschungsprojekten und kooperieren mit akademischen Einrichtungen, um an der Spitze der Technologieentwicklung zu bleiben und ihren Kunden stets die neuesten Lösungen bieten zu können. 
+     
+    Das Unternehmen legt großen Wert auf Nachhaltigkeit und soziale Verantwortung und setzt sich dafür ein, Technologien zu entwickeln, die einen positiven Einfluss auf die Gesellschaft und die Umwelt haben. Dabei stehen ethische Grundsätze und Datenschutz an oberster Stelle. 
+     
+    Midjourney hat sich als vertrauenswürdiger Partner für Unternehmen aller Größen und Branchen etabliert und strebt danach, durch innovative Technologielösungen die Geschäftswelt zu transformieren und eine bessere Zukunft zu gestalten.`</span>
+  <span class="s2">}</span>
+<span class="s2">]</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;informationCardHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">informationCards</span><span class="s2">[</span><span class="s1">currentCardIndex</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">;</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;informationCardInformation&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">informationCards</span><span class="s2">[</span><span class="s1">currentCardIndex</span><span class="s2">].</span><span class="s1">information</span><span class="s2">;</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(64, 64, 64)&quot;</span><span class="s2">;</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;previousCardButton&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;previousCardButton&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex</span><span class="s2">--;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;nextCardButton&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex</span><span class="s2">++;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton2&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex </span><span class="s2">= </span><span class="s3">1</span><span class="s2">;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton3&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex </span><span class="s2">= </span><span class="s3">2</span><span class="s2">;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton4&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s1">currentCardIndex </span><span class="s2">= </span><span class="s3">3</span><span class="s2">;</span>
+  <span class="s1">checkCurrentCard</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+<span class="s0">function </span><span class="s1">checkCurrentCard</span><span class="s2">(){</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">currentCardIndex </span><span class="s2">== </span><span class="s3">0</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;previousCardButton&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(64, 64, 64)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton2&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton3&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton4&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s0">else</span><span class="s2">{</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;previousCardButton&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">currentCardIndex </span><span class="s2">== </span><span class="s3">1</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton2&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(64, 64, 64)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton3&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton4&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">currentCardIndex </span><span class="s2">== </span><span class="s3">2</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton2&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton3&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(64, 64, 64)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton4&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">currentCardIndex </span><span class="s2">== </span><span class="s3">3</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;nextCardButton&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton2&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton3&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(46, 46, 46)&quot;</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton4&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">backgroundColor </span><span class="s2">= </span><span class="s4">&quot;rgb(64, 64, 64)&quot;</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s0">else</span><span class="s2">{</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;nextCardButton&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+  <span class="s2">}</span>
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;informationCardHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">informationCards</span><span class="s2">[</span><span class="s1">currentCardIndex</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">;</span>
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;informationCardInformation&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">informationCards</span><span class="s2">[</span><span class="s1">currentCardIndex</span><span class="s2">].</span><span class="s1">information</span><span class="s2">;</span>
+<span class="s2">}</span>
+
+<span class="s0">function </span><span class="s1">showMoreImages</span><span class="s2">(){</span>
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;showMore&quot;</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+  <span class="s0">for</span><span class="s2">(</span><span class="s0">let </span><span class="s1">i </span><span class="s2">= </span><span class="s3">7</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt;= </span><span class="s3">15</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;pic&quot; </span><span class="s2">+ </span><span class="s1">i</span><span class="s2">).</span><span class="s1">hidden </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+  <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;midjourneyLogo&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">opacity </span><span class="s2">= </span><span class="s4">&quot;0.3&quot;</span><span class="s2">;</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;chatgptLogo&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= </span><span class="s0">function </span><span class="s1">displayChatgptInformation</span><span class="s2">(){</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">!== </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">0</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">0</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationText&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">0</span><span class="s2">].</span><span class="s1">information</span><span class="s2">;</span>
+  <span class="s2">}</span>
+
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;midjourneyLogo&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">opacity </span><span class="s2">= </span><span class="s4">&quot;0.3&quot;</span><span class="s2">;</span>
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;chatgptLogo&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">opacity </span><span class="s2">= </span><span class="s4">&quot;1&quot;</span><span class="s2">;</span>
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;midjourneyLogo&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= </span><span class="s0">function </span><span class="s1">displayMidjourneyInformation</span><span class="s2">(){</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">!== </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">1</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">){</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">1</span><span class="s2">].</span><span class="s1">headline</span><span class="s2">;</span>
+    <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationText&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">= </span><span class="s1">currentAiText</span><span class="s2">[</span><span class="s3">1</span><span class="s2">].</span><span class="s1">information</span><span class="s2">;</span>
+  <span class="s2">}</span>
+
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;chatgptLogo&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">opacity </span><span class="s2">= </span><span class="s4">&quot;0.3&quot;</span><span class="s2">;</span>
+  <span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;midjourneyLogo&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">opacity </span><span class="s2">= </span><span class="s4">&quot;1&quot;</span><span class="s2">;</span>
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">onclick </span><span class="s2">= () =&gt; {</span>
+  <span class="s0">if</span><span class="s2">(</span><span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;aiInformationTextHeadline&quot;</span><span class="s2">).</span><span class="s1">textContent </span><span class="s2">== </span><span class="s4">&quot;ChatGPT&quot;</span><span class="s2">){</span>
+    <span class="s1">window</span><span class="s2">.</span><span class="s1">open</span><span class="s2">(</span><span class="s4">&quot;https://de.wikipedia.org/wiki/ChatGPT&quot;</span><span class="s2">);</span>
+  <span class="s2">}</span>
+  <span class="s0">else</span><span class="s2">{</span>
+    <span class="s1">window</span><span class="s2">.</span><span class="s1">open</span><span class="s2">(</span><span class="s4">&quot;https://de.wikipedia.org/wiki/Midjourney&quot;</span><span class="s2">);</span>
+  <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;switchCardNumberButton1&quot;</span><span class="s2">).</span><span class="s1">onmouseover </span><span class="s2">= () =&gt; {</span>
+
+<span class="s2">}</span>
+
+<span class="s1">document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">&quot;colorDefault&quot;</span><span class="s2">).</span><span class="s1">style</span><span class="s2">.</span><span class="s1">border </span><span class="s2">= </span><span class="s4">&quot;2px solid white&quot;</span><span class="s2">;</span></pre>
+</body>
+</html>
