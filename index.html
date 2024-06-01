@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Navigation and Actions</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 20px 0; /* Increased padding for more space */
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px; /* Increased padding for more space */
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px; /* Slightly increased font size */
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            display: flex;
+            gap: 20px; /* Increased gap for better spacing */
+        }
+        .actions button {
+            padding: 12px 24px; /* Increased padding for larger buttons */
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px; /* Slightly increased font size */
+        }
+        .actions .main-action {
+            background-color: #000000;
+            color: white;
+        }
+        .actions .secondary-action {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        main {
+            text-align: center;
+            padding: 80px 20px; /* Increased padding for more space */
+        }
+        main h1 {
+            font-size: 48px;
+            color: #333333;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        main p {
+            font-size: 20px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+        .main-content .actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .main-content .actions button {
+            padding: 12px 40px; /* Increased padding for larger buttons */
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-content .main-action {
+            background-color: #A0522D; /* Sienna color */
+            color: white;
+        }
+        .main-content .secondary-action {
+            background-color: white;
+            color: #A0522D; /* Sienna color */
+            border: 1px solid #A0522D;
+        }
+        .images-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+        .images-section img {
+            width: 30%;
+            border-radius: 10px;
+        }
+        .steps-section {
+            background-color: #ffffff;
+            padding: 100px 20px; /* Increased padding */
+            display: flex;
+            justify-content: center;
+        }
+        .steps-container {
+            display: flex;
+            max-width: 1800px; /* Increased max-width */
+            width: 100%;
+            gap: 80px; /* Increased gap */
+        }
+        .steps-text {
+            flex: 1.5; /* Increased flex-grow */
+        }
+        .steps-text h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .steps-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .steps-text .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .steps-text .action-buttons input,
+        .steps-text .action-buttons button {
+            padding: 12px 20px; /* Increased padding */
+            border-radius: 30px;
+            border: 1px solid #A0522D; /* Sienna color */
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        .steps-text .action-buttons input {
+            background-color: white;
+            color: #A0522D; /* Sienna color */
+        }
+        .steps-text .action-buttons button {
+            background-color: #A0522D; /* Sienna color */
+            color: white;
+        }
+        .steps {
+            flex: 2.5; /* Increased flex-grow */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .step {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .step-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #A0522D; /* Sienna color */
+        }
+        .step-content {
+            flex-grow: 1;
+        }
+        .step-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .step-description {
+            font-size: 16px;
+            color: #666;
+        }
+        .step:nth-child(even) {
+            background-color: #f3e8e1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="nav-links">
+            <a href="#about">About Ikigai</a>
+            <a href="#realtime">Your Ikigai in Realtime</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+        <div class="actions">
+            <button class="main-action">Main Action</button>
+            <button class="secondary-action">Secondary Action</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="main-content">
+        <h1>Get your Realtime Ikigai</h1>
+        <p>Answer our Questionnaire and get your real-time analysis of your team's Ikigai</p>
+        <div class="actions">
+            <button class="main-action">Main action</button>
+            <button class="secondary-action">Secondary action</button>
+        </div>
+    </div>
+</main>
+
+<section class="images-section">
+    <img src="https://japan.de/wp-content/uploads/sites/65/2020/07/JAP_2020_BeOkinawa_Zamami3_1200.jpg" alt="Image 1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBVpcOd3obst-ZYA4lhtQKXieCC9xx2tmXQ&s" alt="Image 2">
+    <img src="https://cdn-icons-png.flaticon.com/512/8744/8744839.png" alt="Image 3">
+</section>
+
+<section class="steps-section">
+    <div class="steps-container">
+        <div class="steps-text">
+            <h2>Discover the Power of Our Products</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+            <div class="action-buttons">
+                <input type="text" placeholder="Enter Username">
+                <input type="password" placeholder="Enter Password">
+                <button>Get your own Survey</button>
+            </div>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1</div>
+                    <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2</div>
+                    <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3</div>
+                    <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4</div>
+                    <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
