@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Navigation and Actions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadSection(sectionId, url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(sectionId).innerHTML = html;
+                    })
+                    .catch(error => console.log('Error loading section:', error));
+            }
+
+            loadSection('venture', 'venture.html');
+            loadSection('teamcore', 'teamcore.html');
+            loadSection('teamcompetence', 'teamcompetence.html');
+            loadSection('competencebusiness', 'competencebusiness.html');
+            loadSection('valuesbusinessventure', 'valuesbusinessventure.html');
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="nav-links">
+            <a href="#about-section">About Ikigai</a>
+            <a href="#realtime-section">Your Ikigai in Realtime</a>
+            <a href="#dashboard-section">Dashboard</a>
+        </div>
+        <div class="actions">
+            <a href="#login-section"><button class="LoginButton">Login</button></a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="about-section" class="main-content">
+        <h1>What is Ikigai ?</h1>
+        <div class="about-content">
+            <div class="text">
+                <p>Ikigai is a Japanese concept that translates to "reason for being" or "purpose in life." It describes the things that make life worthwhile and helps find a balance between personal passions, skills, what the world needs, and what one can be paid for. In a business context, Ikigai can serve as a guide to developing business ideas that are not only economically successful but also personally fulfilling and socially beneficial.</p>
+                <p>A strong fit between your personal characteristics and your business idea is crucial for your business success. Take a tour to develop, evaluate, select and optimize your business idea for sustainable performance using the Ikigai framework for entrepreneurs. </p>
+            </div>
+            <div class="image">
+                <img src="ikigai%20logo.jpg" alt="Ikigai Image">
+            </div>
+        </div>
+        <div class="actions centered">
+            <a href="#login-section"><button class="StartButton">Start questionnaire</button></a>
+        </div>
+    </div>
+</main>
+
+<section id="login-section" class="steps-section">
+    <div class="steps-container">
+        <div class="steps-text">
+            <h2> Login</h2>
+            <p> Erstellen Sie einen Account und geben den gemeinsamen Gruppencode an </p>
+            <div class="action-buttons">
+                <input type="text" placeholder="Enter Username">
+                <input type="password" placeholder="Enter Password">
+                <input type="password" placeholder="Gruppencode">
+                <button>Get your own Survey</button>
+            </div>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1</div>
+                    <div class="step-description">Anmeldung und Gruppencode</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2</div>
+                    <div class="step-description">Umfrage ausfüllen</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3</div>
+                    <div class="step-description"> Datenauswertung / Dashboard </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4</div>
+                    <div class="step-description"> Veränderungen bewirken</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="realtime-section" class="additional-section">
+    <div class="nav-bar">
+        <a href="#venture">Venture</a>
+        <a href="#teamcore">Teamcore</a>
+        <a href="#teamcompetence">Teamcompetence</a>
+        <a href="#competencebusiness">Competence Business</a>
+        <a href="#valuesbusinessventure">Values Business Venture</a>
+    </div>
+    <div id="venture" class="subsection"></div>
+    <div id="teamcore" class="subsection"></div>
+    <div id="teamcompetence" class="subsection"></div>
+    <div id="competencebusiness" class="subsection"></div>
+    <div id="valuesbusinessventure" class="subsection"></div>
+</section>
+
+</body>
+</html>
+
