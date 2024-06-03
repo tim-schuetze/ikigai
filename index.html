@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Navigation and Actions</title>
+    <title>Website with Survey</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -35,6 +35,120 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
+
+        .footer-section {
+            background-color: #f8f8f8;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .footer-container h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .contact-form button {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            background-color: #A0522D; /* Sienna color */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #8a3e1c; /* Darker Sienna color */
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-links a {
+            color: #A0522D; /* Sienna color */
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .newsletter {
+            display: flex;
+            gap: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .newsletter input {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #A0522D;
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .newsletter button {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            background-color: #A0522D;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background-color: #8a3e1c;
+        }
+
         .actions {
             display: flex;
             gap: 20px; /* Increased gap for better spacing */
@@ -93,16 +207,44 @@
             color: #A0522D; /* Sienna color */
             border: 1px solid #A0522D;
         }
+
+        .info-section {
+            background-color: #f0f8ff; /* Helle Hintergrundfarbe für Kontrast */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 20px; /* Zentriert den Text und gibt etwas Abstand */
+        }
+
+
         .images-section {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px; /* Erhöht den Abstand zwischen den Bildern */
             padding: 50px 20px;
+            flex-wrap: wrap; /* Ermöglicht das Umfließen der Bilder, wenn der Bildschirm zu klein wird */
         }
+
         .images-section img {
-            width: 30%;
-            border-radius: 10px;
+            width: 25%; /* Reduziert die Breite jedes Bildes auf 25% des Containerbereichs */
+            height: auto; /* Stellt sicher, dass die Höhe automatisch angepasst wird, um das Seitenverhältnis beizubehalten */
+            object-fit: cover; /* Deckt den Bereich ab, ohne das Bild zu verzerrt */
+            border-radius: 10px; /* Weiche Ecken für Ästhetik */
         }
+
+
         .steps-section {
             background-color: #ffffff;
             padding: 100px 20px; /* Increased padding */
@@ -144,6 +286,56 @@
             cursor: pointer;
             text-align: center;
         }
+
+        .survey-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+
+        .survey-section h2 {
+            color: #444;
+            font-size: 24px;
+        }
+
+        .explanation {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .question p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .rating-scale label {
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+
+        @media (max-width: 768px) {
+            .images-section img {
+                width: 50%; /* Erhöht die Breite auf kleineren Bildschirmen für bessere Sichtbarkeit */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .images-section img {
+                width: 100%; /* Lässt jedes Bild auf sehr kleinen Bildschirmen die volle Breite einnehmen */
+            }
+        }
+
         .steps-text .action-buttons input {
             background-color: white;
             color: #A0522D; /* Sienna color */
@@ -187,6 +379,129 @@
         .step:nth-child(even) {
             background-color: #f3e8e1;
         }
+
+        .survey-intro .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .survey-intro select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        .survey-intro button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .survey-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+
+        .survey-section h2 {
+            color: #444;
+            font-size: 24px;
+        }
+
+        .explanation {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .question p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .rating-scale label {
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+
+        .survey-section {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .survey-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .survey-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .survey-question label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .survey-question input[type="number"],
+        .survey-question select,
+        .survey-question input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .survey-form button {
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .survey-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .next-button {
+            background-color: #A0522D;
+        }
+
+        .prev-button {
+            background-color: #ccc;
+            color: #333;
+        }
+
     </style>
 </head>
 <body>
@@ -216,10 +531,27 @@
     </div>
 </main>
 
+<main>
+    <!-- Neuer Info-Abschnitt über Ikigai und Entrepreneurship -->
+        <section class="info-section">
+            <div class="container">
+                <h2>Understanding Ikigai in Entrepreneurship</h2>
+                <p>
+                    Ikigai, a Japanese concept meaning "a reason for being", is deeply intertwined with personal satisfaction and professional success. Entrepreneurs can harness the power of Ikigai by aligning their passions, talents, and market needs with what they can be paid for. This alignment not only drives success but also fosters personal fulfillment and long-term well-being.
+                </p>
+                <p>
+                    Discovering your Ikigai involves reflection, understanding, and a deliberate application of your skills to solve meaningful problems. It encourages a balance that many find essential for a sustainable and satisfying entrepreneurial journey.
+                </p>
+            </div>
+        </section>
+    </div>
+</main>
+
+
 <section class="images-section">
     <img src="https://japan.de/wp-content/uploads/sites/65/2020/07/JAP_2020_BeOkinawa_Zamami3_1200.jpg" alt="Image 1">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBVpcOd3obst-ZYA4lhtQKXieCC9xx2tmXQ&s" alt="Image 2">
-    <img src="https://cdn-icons-png.flaticon.com/512/8744/8744839.png" alt="Image 3">
+    <img src="https://centurionlgplus.com/wp-content/uploads/2022/06/ikigai_japanese_secret_to_a_joyful_life_pic-2.png" alt="Image 3">
 </section>
 
 <section class="steps-section">
@@ -237,34 +569,274 @@
             <div class="step">
                 <div class="step-number">01</div>
                 <div class="step-content">
-                    <div class="step-title">Step 1</div>
+                    <div class="step-title">Register</div>
                     <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">02</div>
                 <div class="step-content">
-                    <div class="step-title">Step 2</div>
+                    <div class="step-title">Questionnaire</div>
                     <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">03</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3</div>
+                    <div class="step-title">Dashboard Visualisation</div>
                     <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">04</div>
                 <div class="step-content">
-                    <div class="step-title">Step 4</div>
+                    <div class="step-title">Analyse Results</div>
                     <div class="step-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<section class="survey-intro">
+    <div class="container">
+        <h2>Please select your details:</h2>
+        <form id="preSurveyForm">
+            <label for="university">University:</label>
+            <select id="university" name="university" required>
+                <option value="">Select University</option>
+                <option value="university1">University 1</option>
+                <option value="university2">University 2</option>
+                <!-- Weitere Universitäten hinzufügen -->
+            </select>
+
+            <label for="seminar">Seminar:</label>
+            <select id="seminar" name="seminar" required>
+                <option value="">Select Seminar</option>
+                <option value="seminar1">Seminar 1</option>
+                <option value="seminar2">Seminar 2</option>
+                <!-- Weitere Seminare hinzufügen -->
+            </select>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">Select Semester</option>
+                <option value="winter2023">Winter 2023</option>
+                <option value="summer2024">Summer 2024</option>
+                <!-- Weitere Semester hinzufügen -->
+            </select>
+
+            <button type="submit">Continue to Survey</button>
+        </form>
+    </div>
+</section>
+
+
+<!-- Survey Sections -->
+<form id="surveyForm">
+    <!-- Kapitel: Venture-To-Person-Fit -->
+    <div class="survey-section" id="venture">
+        <h2>01 Venture-To-Person-Fit</h2>
+
+        <!-- Jede Frage wird eindeutig definiert und gestaltet. -->
+        <!-- Frage 1 -->
+        <div class="question" id="question1" style="display:block;">
+            <p>Wie sehr gefällt dir die Umfrage?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="nextQuestion(1)">Next</button>
+        </div>
+
+        <!-- Frage 2 -->
+        <div class="question" id="question2" style="display:none;">
+            <p>Wie effektiv ist die Teamkommunikation innerhalb Ihres Projekts?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(2)">Back</button>
+            <button type="button" onclick="nextQuestion(2)">Next</button>
+        </div>
+
+        <!-- Frage 3 -->
+        <div class="question" id="question3" style="display:none;">
+            <p>Wie zufrieden sind Sie mit den verfügbaren Ressourcen für Ihr Projekt?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(3)">Back</button>
+            <button type="button" onclick="nextQuestion(3)">Next</button>
+        </div>
+
+        <!-- Frage 4 -->
+        <div class="question" id="question4" style="display:none;">
+            <p>Wie bewerten Sie die Innovationskraft Ihres Teams?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(4)">Back</button>
+            <button type="button" onclick="nextQuestion(4)">Next</button>
+        </div>
+
+        <!-- Frage 5 -->
+        <div class="question" id="question5" style="display:none;">
+            <p>Wie gut sind die strategischen Ziele Ihres Projekts definiert?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(5)">Back</button>
+            <button type="button" onclick="nextQuestion(5)">Next</button>
+        </div>
+
+        <!-- Frage 6 -->
+        <div class="question" id="question6" style="display:none;">
+            <p>Wie effektiv nutzen Sie persönliche Stärken innerhalb des Teams?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(6)">Back</button>
+            <button type="button" onclick="nextQuestion(6)">Next</button>
+        </div>
+
+        <!-- Frage 7 -->
+        <!-- Frage 7 -->
+        <div class="question" id="question7" style="display:none;">
+            <p>Wie gut fühlen Sie sich durch die Teamführung unterstützt?</p>
+            <div class="rating-scale">
+                <label>1 <input type="radio" name="q7" value="1"></label>
+                <label>2 <input type="radio" name="q7" value="2"></label>
+                <label>3 <input type="radio" name="q7" value="3"></label>
+                <label>4 <input type="radio" name="q7" value="4"></label>
+                <label>5 <input type="radio" name="q7" value="5"></label>
+                <label>6 <input type="radio" name="q7" value="6"></label>
+                <label>7 <input type="radio" name="q7" value="7"></label>
+            </div>
+            <button type="button" onclick="prevQuestion(7)">Back</button>
+        </div>
+
+    </div>
+</form>
+
+
+<section class="footer-section">
+    <div class="footer-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="quick-links">
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="#twitter"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+            <a href="#linkedin"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"></a>
+        </div>
+        <div class="newsletter">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showStep(step) {
+        var steps = document.querySelectorAll('.survey-step');
+        steps.forEach(function(stepElement) {
+            stepElement.style.display = 'none';
+        });
+        document.getElementById(step).style.display = 'block';
+    }
+
+
+
+    // Start mit dem ersten Schritt
+    showStep('step1-1');
+
+    document.getElementById('preSurveyForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const university = document.getElementById('university').value;
+        const seminar = document.getElementById('seminar').value;
+        const semester = document.getElementById('semester').value;
+
+        // Hier könntest du Code hinzufügen, um zur spezifischen Umfrageseite zu navigieren
+        console.log("University: " + university + ", Seminar: " + seminar + ", Semester: " + semester);
+        // Weiterleitung zur spezifischen Umfrage basierend auf den Auswahl
+    });
+
+    function nextQuestion(current) {
+        const currentQuestion = document.getElementById('question' + current);
+        const nextQuestion = document.getElementById('question' + (current + 1));
+
+        // Verstecke die aktuelle Frage
+        currentQuestion.style.display = 'none';
+
+        // Zeige die nächste Frage, falls vorhanden
+        if (nextQuestion) {
+            nextQuestion.style.display = 'block';
+        }
+    }
+
+    function prevQuestion(current) {
+        const currentQuestion = document.getElementById('question' + current);
+        const prevQuestion = document.getElementById('question' + (current - 1));
+
+        // Verstecke die aktuelle Frage
+        currentQuestion.style.display = 'none';
+
+        // Zeige die vorherige Frage, falls vorhanden
+        if (prevQuestion) {
+            prevQuestion.style.display = 'block';
+        }
+    }
+
+
+
+</script>
+
+
 
 </body>
 </html>
