@@ -80,7 +80,7 @@ const questions: Record<QuestionCategory, string[]> = {
     ],
     perceived_impact: [
         "Estimate the impact of your offering on the ecological environment.",
-        "Estimatetheimpactofyourofferingonthepeopleś well- being.",
+        "Estimate the impact of your offering on the people`s well- being.",
         "Estimate the impact of your offering on your own life."
 
     ],
@@ -114,7 +114,7 @@ const questions: Record<QuestionCategory, string[]> = {
         "Meaningless - Meaningful",
         "Boring - Inspiring",
         "Shortsighted -  Visionary",
-        "Dislikable Likable"
+        "Dislikable - Likable"
     ],
     attitude2: [
         "After my studies, I would love to realize this business idea",
